@@ -12,10 +12,10 @@
 | **Phase 1** | **Global Design Tokens & Layout** | Tokens (`:root`), font, button shapes, header top stripe, global base styles | ✅ Completed | [x] |
 | **Phase 2** | **Authentication Screens** (5 routes) | `/auth/sign-in`<br>`/auth/create-account`<br>`/auth/forgot-password`<br>`/auth/reset-password`<br>`/auth/check-email` | ✅ Completed | [x] |
 | **Phase 3** | **Background Check Dashboard** | `/background-check` (Talent operations & candidate verification) | ⏳ Pending | [ ] |
-| **Phase 4** | **Candidate Assessment Welcome** | `/welcome` (Overview card, metadata stats, rules sidebar) | ⏳ Pending | [ ] |
-| **Phase 5** | **Candidate Question List** | `/questions` (Coding card, written response, MCQs, progress rail) | ⏳ Pending | [ ] |
-| **Phase 6** | **Candidate Challenge Overview** | `/challenge` (Challenge brief, facts, topic tags, footer) | ⏳ Pending | [ ] |
-| **Phase 7** | **Candidate Coding Workspace & Modal** | `/workspace` (3-column layout, editor, output console, warning modal) | ⏳ Pending | [ ] |
+| **Phase 4** | **Candidate Assessment Welcome** | `/welcome` (Overview card, metadata stats, rules sidebar) | ✅ Completed | [x] |
+| **Phase 5** | **Candidate Question List** | `/questions` (Coding card, written response, MCQs, progress rail) | ✅ Completed | [x] |
+| **Phase 6** | **Candidate Challenge Overview** | `/challenge` (Challenge brief, facts, topic tags, footer) | ✅ Completed | [x] |
+| **Phase 7** | **Candidate Coding Workspace & Modal** | `/workspace` (3-column layout, editor, output console, warning modal) | ✅ Completed | [x] |
 | **Phase 8** | **Index & Final Polish** | `/` (Directory), responsive check, clean build verification | ⏳ Pending | [ ] |
 
 ---
@@ -101,61 +101,62 @@
 ---
 
 ### Phase 4: Candidate Assessment Welcome (`/welcome`)
-- [ ] **Header**:
+- [x] **Header**:
   - "ABC Company | Senior Frontend Engineer assessment"
-- [ ] **Assessment Card**:
+- [x] **Assessment Card**:
   - Tag: "Candidate assessment"
-  - Heading: "Frontend Engineering Assessment"
+  - Heading: "Senior Frontend Engineer Assessment"
   - Metrics: DURATION (90 mins), SECTIONS (3 sections), CODING (1 challenge), QUESTIONS (2 questions)
   - Footer message: Timer cannot be paused once started
   - Button: "Start assessment"
-- [ ] **Sidebar**:
-  - Timebox: 90 minutes
-  - Instructions / Rules: Allowed languages (Python, JS, TS), no external libraries, plagiarism detection active
+- [x] **Sidebar**:
+  - Timebox: 90 mins
+  - Instructions / Rules: Allowed languages (Python, JS, TS), no tab switching / refreshing, automatic saving active
 
 ---
 
 ### Phase 5: Candidate Question List (`/questions`)
-- [ ] **Coding Task Card**:
-  - Title: "Coding Challenge: Bracket Matcher"
-  - Duration & language metadata
-  - "Start coding" button
-- [ ] **Written Response Card**:
+- [x] **Coding Task Card**:
+  - Title: "Bracket combinations"
+  - Duration & language metadata: "30 mins · TypeScript"
+  - "Start challenge" button
+- [x] **Written Response Card**:
   - Tag "1", question prompt, formatted response area
-- [ ] **Multiple Choice Card**:
+- [x] **Multiple Choice Card**:
   - Tag "2", accessible modal question, clean radio list with correct default state
-- [ ] **Progress Rail**:
-  - Timer: countdown display
-  - Section checklist with status badges
+- [x] **Progress Rail**:
+  - Timer: countdown display "01:28:45"
+  - Section checklist with status badges (Not started, 0/2 answered, Pending)
   - "Submit assessment" button
 
 ---
 
 ### Phase 6: Candidate Challenge Overview (`/challenge`)
-- [ ] **Header**: Challenges / Assessments navigation
-- [ ] **Challenge Header**:
-  - Eyebrow: "PRACTICE" / "ASSESSMENT"
+- [x] **Header**: Challenges / Assessments navigation
+- [x] **Challenge Header**:
+  - Eyebrow: "ASSESSMENT"
   - Title: "Bracket combinations"
-- [ ] **Brief Card**:
-  - Tag: "Medium", points: "20 pts"
+  - Subtitle: "Generate all combinations of well-formed parentheses given n pairs."
+- [x] **Brief Card**:
+  - Tag: "Medium", points: "100 pts"
   - Assignment description matching exact algorithmic problem
-  - Duration & difficulty metrics
-- [ ] **Topics & Guidelines**:
-  - Stack pattern, Depth-first search, Input validation
-- [ ] **Footer**:
-  - Status indicator, time limit, "Start challenge" action
+  - Duration (30 mins) & difficulty (Medium) metrics
+- [x] **Topics & Guidelines**:
+  - Depth-first search (DFS), Stack pattern, Input validation
+- [x] **Footer**:
+  - Autosave enabled message, 30 minutes remaining, "Start challenge" action
 
 ---
 
 ### Phase 7: Candidate Coding Workspace & Modal (`/workspace`)
-- [ ] **3-Column Workspace**:
-  - Problem Panel: Problem description, sample cases, criteria checklist
+- [x] **3-Column Workspace**:
+  - Problem Panel: Description, sample cases, criteria checklist
   - Editor Panel: Dark forest green theme, language selector, line numbers, code editor body, shortcut hint, run action
-  - Output Panel: Dark panel, test input field, console log output, test pass/fail status strip
-- [ ] **Footer**:
+  - Output Panel: Dark panel, test input field, console log output with PASS badges, 2/2 tests passing status strip
+- [x] **Footer**:
   - Back link, timer remaining, submit button
-- [ ] **Integrity Warning Modal**:
-  - Centered dialog, exact title & warning badge, warning message, dual action buttons ("Keep coding" vs "Exit")
+- [x] **Integrity Warning Modal**:
+  - Centered dialog, exact title "Integrity warning" & warning badge "Warning 1 of 3", warning message, dual action buttons ("Return to assessment" vs "Exit assessment")
 
 ---
 

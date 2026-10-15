@@ -1,82 +1,101 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 
-const options = [
-  "Keep focus outside the modal to reduce trapping.",
-  "Disable keyboard controls.",
-  "Use color alone for every state.",
-  "Hide labels until hover.",
+const modalOptions = [
+  "Trap focus within the modal while open",
+  "Disable keyboard navigation completely",
+  "Use color alone to convey error states",
+  "Hide form labels until hovered",
 ];
+
+const booleanOptions = ["True", "False"];
 
 export default function QuestionsPage() {
   return (
     <main className="screen questions-screen">
-      <Header />
+      <Header title="Senior Frontend Engineer assessment" />
       <section className="questions-layout">
         <article className="question-stack">
           <section className="question-card coding-task">
-            <p className="eyebrow">CODING TASK</p>
             <div>
+              <p className="eyebrow">CODING TASK</p>
               <h2>Bracket combinations</h2>
-              <p>45 min · Python</p>
+              <p className="task-meta">30 mins · TypeScript</p>
             </div>
             <Link href="/challenge">
-              <Button>Start now</Button>
+              <Button>Start challenge</Button>
             </Link>
           </section>
 
-          <section className="response-card">
+          <section className="question-card response-card">
             <div className="question-title">
-              <span className="tag">A</span>
-              <h2>Tell us about your design background.</h2>
+              <span className="tag">1</span>
+              <h2>Explain your approach to component-driven development and managing UI state.</h2>
             </div>
-            <textarea defaultValue="I have 10+ years of backend experience." />
+            <textarea
+              placeholder="Describe your architecture decisions, state management strategies, and how you ensure reusable, maintainable components..."
+              defaultValue=""
+            />
           </section>
 
-          <section className="mcq-card">
+          <section className="question-card mcq-card">
             <div className="question-title">
-              <span className="tag">B</span>
-              <h2>Which behavior is essential for an accessible modal?</h2>
+              <span className="tag">2</span>
+              <h2>Which behavior is essential for an accessible modal dialog?</h2>
             </div>
-            {options.map((option, index) => (
-              <label key={option} className={index === 1 ? "selected-option" : ""}>
-                <input type="radio" name="modal" defaultChecked={index === 1} />
-                {option}
-              </label>
-            ))}
+            <div className="mcq-options">
+              {modalOptions.map((option, index) => (
+                <label key={option} className="mcq-option">
+                  <input type="radio" name="modal-accessible" defaultChecked={index === 0} />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
           </section>
 
-          <section className="mcq-card short-card">
+          <section className="question-card mcq-card">
             <div className="question-title">
-              <span className="tag">C</span>
-              <h2>Universal design means designing for one average user.</h2>
+              <span className="tag">3</span>
+              <h2>
+                Universal design means designing products to be usable by everyone, without need
+                for adaptation.
+              </h2>
             </div>
-            <label>
-              <input type="checkbox" defaultChecked /> True
-            </label>
+            <div className="mcq-options mcq-options-inline">
+              {booleanOptions.map((option, index) => (
+                <label key={option} className="mcq-option">
+                  <input type="radio" name="universal-design" defaultChecked={index === 0} />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
           </section>
         </article>
 
         <aside className="progress-rail">
-          <p className="eyebrow">TIME LEFT</p>
-          <strong>4:12:00</strong>
+          <p className="eyebrow">TIME REMAINING</p>
+          <strong className="timer-display">01:28:45</strong>
           <h2>Progress</h2>
-          <dl>
+          <dl className="progress-list">
             <div>
               <dt>Coding challenge</dt>
-              <dd>Done</dd>
+              <dd className="status-chip status-pending">Not started</dd>
             </div>
             <div>
-              <dt>Open-ended</dt>
-              <dd>4 questions</dd>
+              <dt>Written responses</dt>
+              <dd className="status-chip status-progress">0/2 answered</dd>
             </div>
             <div>
-              <dt>Review</dt>
-              <dd>Available</dd>
+              <dt>Review &amp; submit</dt>
+              <dd className="status-chip status-pending">Pending</dd>
             </div>
           </dl>
-          <Button>Submit early</Button>
+          <Button variant="primary" className="submit-btn">
+            Submit assessment
+          </Button>
         </aside>
       </section>
     </main>
