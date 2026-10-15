@@ -8,7 +8,6 @@ export function Header({ title = "Frontend Engineer Assessment", showNav = false
     <header className="app-header">
       <div className="header-left">
         <div className="brand-mark" aria-label="ABC Company">
-          <span className="brand-icon">A</span>
           <span className="brand-word">ABC Company</span>
         </div>
         <span className="header-divider" />
@@ -25,3 +24,4 @@ export function Header({ title = "Frontend Engineer Assessment", showNav = false
     </header>
   );
 }
+
